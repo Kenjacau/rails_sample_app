@@ -26,6 +26,8 @@ test "valid signup information" do
                                             password_confirmation: "password" }
     end
     assert_template 'users/show'
+     assert is_logged_in?
+    assert_not flash.empty?
     assert_equal 'Welcome to the Sample App!', flash[:success] 
 end
 end
